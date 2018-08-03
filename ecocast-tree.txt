@@ -1,44 +1,44 @@
-/mnt/ecocast
-├── corecode            <- for admin only (Nick or Ben)
-│   ├── java
-│   ├── matlab
-│   ├── python
-│   ├── R
-│   └── sh
-├── coredata            <- for admin only (Nick or Ben)
-│   ├── bathy
-│   ├── blendedseawinds
-│   ├── cpcugb
-│   ├── meogis
-│   ├── mur
-│   ├── nam218
-│   ├── natural_earth
-│   ├── obpg
-│   └── wx
-├── data                <- for admin only (Nick or Ben)
-├── projectdata
-│   ├── archer
-│   ├── crabcast
-│   ├── crabdata
-│   ├── debrismap
-│   ├── jellycast
-│   ├── jellydata
-│   ├── opt-archives
-│   ├── postdocs        <- postdocs
-│   ├── students        <- students
-│   ├── tickcast
-│   └── tickdata
-├── projects
-│   ├── crabcast
-│   ├── crabdata
-│   ├── debrismap
-│   ├── devel
-│   ├── jellycast
-│   ├── jellydata
-│   ├── nwatlantic
-│   ├── postdocs        <- postdocs
-│   ├── psp
-│   ├── students        <- students
-│   ├── tickcast
-│   └── tickdata
-└── shiny               <- for admin only (Nick or Ben)
+/mnt/ecocast            <- note this is network storage
+    ├── corecode            <- for admin only (Nick or Ben)
+    │   ├── java
+    │   ├── matlab
+    │   ├── python
+    │   ├── R
+    │   └── sh
+    ├── coredata            <- for admin only (Nick or Ben)
+    │   ├── bathy
+    │   ├── blendedseawinds
+    │   ├── cpcugb
+    │   ├── meogis
+    │   ├── mur
+    │   ├── nam218
+    │   ├── natural_earth
+    │   ├── obpg
+    │   └── wx
+    ├── data                <- for admin only (Nick or Ben)
+    ├── projectdata
+    │   ├── archer
+    │   ├── crabcast
+    │   ├── crabdata
+    │   ├── debrismap
+    │   ├── jellycast
+    │   ├── jellydata
+    │   ├── opt-archives
+    │   ├── postdocs        <- postdocs
+    │   ├── students        <- students
+    │   ├── tickcast
+    │   └── tickdata
+    ├── projects
+    │   ├── crabcast
+    │   ├── crabdata
+    │   ├── debrismap
+    │   ├── devel
+    │   ├── jellycast
+    │   ├── jellydata
+    │   ├── nwatlantic
+    │   ├── postdocs        <- postdocs
+    │   ├── psp
+    │   ├── students        <- students
+    │   ├── tickcast
+    │   └── tickdata
+    └── shiny               <- for admin only (Nick or Ben)
