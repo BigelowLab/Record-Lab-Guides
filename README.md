@@ -11,3 +11,7 @@ A collection of guides for working in the Record Lab and Computational Ecology L
 + [Rowlingson's Spatial](https://www.maths.lancs.ac.uk/~rowlings/Teaching/UseR2012/cheatsheet.html)
 
 + [Boysel's General/Spatial](https://gist.github.com/sboysel/fc661f26ef51eae6377b)
+
+### Interesting blogs
+
++ [Advice-to-young-and-old-programmers](https://r-posts.com/advice-to-young-and-old-programmers-a-conversation-with-hadley-wickham/)
