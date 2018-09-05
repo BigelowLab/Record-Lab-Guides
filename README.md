@@ -2,6 +2,10 @@
 A collection of guides for working in the Record Lab and Computational Ecology Lab
 
 
+### Online books
+
++ [Geocomputation with R](https://geocompr.robinlovelace.net/)
+
 ### Cheatsheets
 
 + [RStudio's tidyverse](https://www.rstudio.com/resources/cheatsheets/)
