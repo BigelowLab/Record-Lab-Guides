@@ -8,6 +8,8 @@ A collection of guides for working in the Record Lab and Computational Ecology L
 
 ### Cheatsheets
 
++ [Base plotting, ggplot2, markdown](https://www.r-graph-gallery.com/cheatsheet/)
+
 + [RStudio's tidyverse](https://www.rstudio.com/resources/cheatsheets/)
 
 + [Racine's Raster](https://rpubs.com/etiennebr/visualraster)
