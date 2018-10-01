@@ -2,9 +2,11 @@
 A collection of guides for working in the Record Lab and Computational Ecology Lab
 
 
-### Online books
+### Online books/courses
 
 + [Geocomputation with R](https://geocompr.robinlovelace.net/)
+
++ [Open Geo Hub](https://opengeohub.org/course)
 
 ### Cheatsheets
 
@@ -21,3 +23,4 @@ A collection of guides for working in the Record Lab and Computational Ecology L
 ### Interesting blogs
 
 + [Advice-to-young-and-old-programmers](https://r-posts.com/advice-to-young-and-old-programmers-a-conversation-with-hadley-wickham/)
+
