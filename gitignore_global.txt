@@ -1,4 +1,5 @@
 # an example of a useful .gitignore_global stored in the users home directory
+# more here https://help.github.com/articles/ignoring-files/
 
 .gitignore
 
