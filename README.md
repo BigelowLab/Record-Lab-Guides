@@ -24,3 +24,10 @@ A collection of guides for working in the Record Lab and Computational Ecology L
 
 + [Advice-to-young-and-old-programmers](https://r-posts.com/advice-to-young-and-old-programmers-a-conversation-with-hadley-wickham/)
 
+### Error trapping
+
+#### tryCatch
+
++ [discussion](https://stackoverflow.com/questions/12193779/how-to-write-trycatch-in-r)
+
++ [rsangole.netlify post](https://rsangole.netlify.com/post/try-catch/)
