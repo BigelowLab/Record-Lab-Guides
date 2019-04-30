@@ -26,7 +26,16 @@ A collection of guides for working in the Record Lab and Computational Ecology L
 
 ### Error trapping
 
-#### tryCatch
+#### try()
+
+```
+x <- try(log("a"))
+if (inherits(x, "try-error")) {
+  stop("oooof!")
+}
+```
+
+#### tryCatch()
 
 + [discussion](https://stackoverflow.com/questions/12193779/how-to-write-trycatch-in-r)
 
