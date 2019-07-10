@@ -20,6 +20,8 @@ A collection of guides for working in the Record Lab and Computational Ecology L
 
 + [Boysel's General/Spatial](https://gist.github.com/sboysel/fc661f26ef51eae6377b)
 
++ [Coordinate Reference Systems](https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/OverviewCoordinateReferenceSystems.pdf)
+
 ### Interesting blogs
 
 + [Advice-to-young-and-old-programmers](https://r-posts.com/advice-to-young-and-old-programmers-a-conversation-with-hadley-wickham/)
