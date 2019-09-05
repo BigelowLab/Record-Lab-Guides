@@ -4,6 +4,8 @@ A collection of guides for working in the Record Lab and Computational Ecology L
 
 ### Online books/courses
 
++ [Rspatial.org](https://rspatial.org)
+
 + [Geocomputation with R](https://geocompr.robinlovelace.net/)
 
 + [Open Geo Hub](https://opengeohub.org/course)
