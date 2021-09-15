@@ -27,4 +27,11 @@ Port: 22
 
 You may be able to [VS Code](https://code.visualstudio.com) which is a development environment.
 
-If your local platform runs macos you may be able to set up [rmate](https://github.com/textmate/rmate) to diretcly edit files on the server using TextMate, Atom and other editors.  Contact Bigelow IT for help with that.
+If your local platform runs macos you may be able to set up [rmate](https://github.com/textmate/rmate) to diretcly edit files on the server using TextMate, Atom and other editors.  Contact Bigelow IT for help with that. 
+
+### rmate troubles?
+
+From Nicholas Covino ...
+>It can only work for one session at a time, unless you change the port before every connection (which is obviously a pain). So if you get disconnected uncleanly it'll fail until that session times out or you manually kill it.
+>
+>The easiest way is`killall sshd` from the new session, though it will also drop that one; you can do `ps waux | grep sshd | grep <username>` to find the specific PID to kill manually (it'll be the sshd instance running as you and not root).
