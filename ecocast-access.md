@@ -24,3 +24,7 @@ Remote file access is possible using remote sftp browsers such as [Cyberduck](ht
 
 URL: sftp://ecocast.bigelow.org/mnt/ecocast 
 Port: 22
+
+You may be able to [VS Code](https://code.visualstudio.com) which is a development environment.
+
+If your local platform runs macos you may be able to set up [rmate](https://github.com/textmate/rmate) to diretcly edit files on the server using TextMate, Atom and other editors.  Contact Bigelow IT for help with that.
