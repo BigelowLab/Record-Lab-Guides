@@ -24,3 +24,9 @@
 ### File mining
   - xml2
   
+
+## Species Modeling
+  - dismo
+  - biomod2
+  
+## Machine Leaning/AI
