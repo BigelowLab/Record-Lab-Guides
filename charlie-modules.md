@@ -1,6 +1,6 @@
 # Modules on charlie
 
-## R packages
+## R packages (tocf-base)
 
 ### Basic R
   - tidyverse
@@ -25,8 +25,9 @@
   - xml2
   
 
-## Species Modeling
+## Species Modeling (tocf-spmod)
   - dismo
   - biomod2
   
-## Machine Leaning/AI
+## Machine Leaning/AI (tcof-mlai)
+  - uhhh
