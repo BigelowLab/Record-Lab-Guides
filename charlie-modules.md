@@ -1,26 +1,26 @@
 # Modules on charlie
 
-# R packages
+## R packages
 
-## Basic R
+### Basic R
   - tidyverse
   - vroom
   - data.table
   
-## Palettes/Colors
+### Palettes/Colors
   - RColorBrewer
   - viridis
 
-# Presentation
+### Presentation
   - shiny
   - Rmarkdown
  
-# Geospatial
+### Geospatial
   - sf
   - terra
   - stars
   - leaflet
 
-# File mining
+### File mining
   - xml2
   
