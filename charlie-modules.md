@@ -30,4 +30,10 @@
   - biomod2
   
 ## Machine Leaning/AI (tcof-mlai)
-  - uhhh
+  - keras
+  - tensorflow
+  - tfruns
+  - abind
+  - caret
+  - e1071
+  - yaml
