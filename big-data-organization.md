@@ -17,4 +17,6 @@
    - Asking the meaningful questions
    - *Not* data-driven ... just trying to imagine the most important questions
 
+Each team could be tens or hundreds of people.
+
 Data analysts work across groups to answer questions
