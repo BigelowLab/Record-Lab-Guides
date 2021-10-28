@@ -10,7 +10,7 @@
 2. Interface group
    - Engineering people, focused on standards
    - Gaining access to the information
-   - Data is ready to be couples with othe datasets to be used in potentially answering a question
+   - Data is ready to be coupled with other datasets to be used in potentially answering a question
 
 3. Question-former group
    - PhD and/or marketing people
