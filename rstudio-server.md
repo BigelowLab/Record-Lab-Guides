@@ -20,13 +20,16 @@ The `~/.studio` directory holds each user's default settings and a cache for sav
 
 ### Hidden files that can break ecocast rstudio
 
-.config/rstudio
-.local/share/rstudio
+During the course of 2021 a number of RStudio server (ecocast.bigelow.org) encountered login issues.  IT traced the soultion to the per-user configuration files: `~/.config/rstudio`, `~.local/share/rstudio` and possibly `~/.rstudio`.  Use this [shell script](purge_rstudio_configs.sh) to rename them with a date stamp.  We don't know the cause of the problem, but this typically resolves the issue.
 
-Rename them:
-
-```
-mv .config/rstudio .config/rstudio-date
-mv .local/share/rstudio .local/share/rstudio-date
+Downlaod the file and then run it.
 
 ```
+sh purge_rstudio_configs.sh
+```
+
+Note that running this will reset RStudio's and R's global options (see `Tools > Global Options...`).  Be sure to set them to you preferred settings. Here's an example of a happy global settings state; this user wants each session fo RStudio to be nice and fresh, and not encumbered by restoring previous data and projects.
+![happy-global-settings](happy-global-settings.png)
+
+
+
