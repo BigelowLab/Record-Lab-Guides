@@ -7,6 +7,7 @@ A good onboarding experience is the most important first step to a successful ex
   - rshiny.bigelow.org?
   - cfe1.bigelow.org?
   - github?
+  - computer needed?
 + Mounted drives? `10.1.7.25/labs/record/EcoCast` ?
 + Organizational philosophy
 + Getting help
