@@ -6,5 +6,8 @@
   
 ## GAM
 
-  +[Noam Ross](https://noamross.github.io/gams-in-r-course/)
+  + [Noam Ross](https://noamross.github.io/gams-in-r-course/)
 
+## Tidy Models
+
+ + [tmwr](https://www.tmwr.org/)
