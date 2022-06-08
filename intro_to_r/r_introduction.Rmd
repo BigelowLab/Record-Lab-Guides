@@ -1,0 +1,181 @@
+---
+title: "R Intro"
+author: "Johnathan Evanilla"
+date: "6/8/2022"
+output: pdf_document
+---
+
+
+
+```{r}
+install.packages("tidyverse")
+install.packages("ggpubr")
+```
+
+
+```{r}
+library(tidyverse)
+library(ggpubr)
+```
+
+
+```{r}
+file <- url("https://raw.githubusercontent.com/BigelowLab/Record-Lab-Guides/master/intro_to_r/maine_lobster.csv")
+```
+
+```{r}
+lob <- read_csv(file)
+```
+
+
+```{r}
+lob
+```
+
+
+
+```{r}
+glimpse(lob)
+```
+
+```{r}
+summary(lob)
+```
+
+```{r}
+View(lob)
+```
+
+## Drop the empty rows at the end of the table
+
+```{r}
+lob <- lob[1:142,]
+```
+
+
+```{r}
+tail(lob)
+```
+
+
+## Remove the empty middle column "..8"
+
+```{r}
+lob <- lob[,-8]
+```
+
+
+```{r}
+lob
+```
+
+```{r}
+lob <- lob |>
+  rename(year = YEAR,
+         species = SPECIES,
+         met_tons = `METRIC TONS`,
+         pounds = `POUNDS*`,
+         m_pounds = `POUNDS(millions)*`,
+         value = VALUE,
+         m_value = `VALUE(millions)`,
+         price_lb = `PRICE/LB`,
+         licenses = `NUMBER OF LICENSE HOLDERS†`,
+         m_traps = `NUMBER OF TRAPS - MILLIONS`,
+         temp = `WATER TEMP AT BOOTHBAY HARBOR STATION (C)`)
+```
+
+
+## Subsetting columns with select()
+
+```{r}
+lob |> 
+  select(year, pounds, value, licenses)
+```
+
+
+```{r}
+lob |> 
+  select(year, pounds, value, licenses) |>
+  mutate(pounds_license = pounds/licenses)
+```
+
+```{r}
+lob |>
+  select(year, pounds, value, licenses) |>
+  mutate(pounds_license = pounds/licenses) |>
+  drop_na()
+```
+
+
+## Write a new csv
+
+```{r}
+lob |>
+  select(year, pounds, value, licenses) |>
+  mutate(pounds_license = pounds/licenses) |>
+  drop_na() |>
+  write_csv("new_maine_lobster.csv")
+```
+
+
+## Arranging a data frame
+
+```{r}
+lob |>
+  arrange(licenses)
+```
+
+
+```{r}
+lob |>
+  arrange(desc(licenses))
+```
+
+```{r}
+lob |>
+  arrange(desc(pounds))
+```
+
+
+## Plotting with ggplot
+
+## Line plot
+
+```{r}
+ggplot(data = lob, aes(x=year, y=pounds)) +
+  geom_line()
+```
+```{r}
+?geom_line
+```
+
+```{r}
+ggplot(data = lob, aes(x=year, y=m_value)) +
+  geom_line()
+```
+
+## Scatter plot
+
+# Does the number of licenses have an effect on the amount of lobster landed?
+
+```{r}
+ggplot(data=lob, aes(x=licenses, y=pounds)) +
+  geom_point()
+```
+
+# Does the water temperature have an effect on the amount of lobster landed?
+
+```{r}
+ggplot(data=lob, aes(x=temp, y=pounds)) +
+  geom_point()
+```
+
+
+```{r}
+ggplot(data=lob, aes(x=temp, y=pounds)) +
+  geom_point() +
+  #geom_smooth(method="lm") +
+  stat_cor()
+```
+
+
