@@ -6,21 +6,24 @@ output: pdf_document
 ---
 
 
+## Install packages
 
 ```{r}
 install.packages("tidyverse")
 install.packages("ggpubr")
 ```
 
+## Load packages
 
 ```{r}
 library(tidyverse)
 library(ggpubr)
 ```
 
+## Read a csv - locally or from a url
 
 ```{r}
-file <- url("https://raw.githubusercontent.com/BigelowLab/Record-Lab-Guides/master/intro_to_r/maine_lobster.csv")
+file <- url("https://raw.githubusercontent.com/BigelowLab/Record-Lab-Guides/master/intro_to_r/maine_lobster_1880_2021.csv")
 ```
 
 ```{r}
@@ -32,7 +35,7 @@ lob <- read_csv(file)
 lob
 ```
 
-
+## Inspect the data frame
 
 ```{r}
 glimpse(lob)
@@ -47,6 +50,11 @@ View(lob)
 ```
 
 ## Drop the empty rows at the end of the table
+
+```{r}
+tail(lob)
+```
+
 
 ```{r}
 lob <- lob[1:142,]
@@ -69,6 +77,8 @@ lob <- lob[,-8]
 lob
 ```
 
+## Rename columns
+
 ```{r}
 lob <- lob |>
   rename(year = YEAR,
@@ -82,6 +92,8 @@ lob <- lob |>
          licenses = `NUMBER OF LICENSE HOLDERS†`,
          m_traps = `NUMBER OF TRAPS - MILLIONS`,
          temp = `WATER TEMP AT BOOTHBAY HARBOR STATION (C)`)
+
+lob
 ```
 
 
@@ -92,12 +104,15 @@ lob |>
   select(year, pounds, value, licenses)
 ```
 
+## Making new columns with mutate
 
 ```{r}
 lob |> 
   select(year, pounds, value, licenses) |>
   mutate(pounds_license = pounds/licenses)
 ```
+
+## Drop any rows with NA values
 
 ```{r}
 lob |>
@@ -106,6 +121,13 @@ lob |>
   drop_na()
 ```
 
+```{r}
+lob |>
+  select(year, pounds, value, licenses) |>
+  mutate(pounds_license = pounds/licenses) |>
+  drop_na() |>
+  summary()
+```
 
 ## Write a new csv
 
@@ -139,15 +161,19 @@ lob |>
 
 ## Plotting with ggplot
 
-## Line plot
+# Line plot
 
 ```{r}
 ggplot(data = lob, aes(x=year, y=pounds)) +
   geom_line()
 ```
+
+
 ```{r}
 ?geom_line
 ```
+
+## Change some aesthetics of the plot
 
 ```{r}
 ggplot(data = lob, aes(x=year, y=m_value)) +
@@ -170,11 +196,12 @@ ggplot(data=lob, aes(x=temp, y=pounds)) +
   geom_point()
 ```
 
+## Adding regression line and correlation coefficents 
 
 ```{r}
 ggplot(data=lob, aes(x=temp, y=pounds)) +
   geom_point() +
-  #geom_smooth(method="lm") +
+  geom_smooth(method="lm") +
   stat_cor()
 ```
 
