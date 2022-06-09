@@ -35,6 +35,7 @@ lob <- read_csv(file)
 lob
 ```
 
+
 ## Inspect the data frame
 
 ```{r}
@@ -79,6 +80,12 @@ lob
 
 ## Rename columns
 
+# Print the column names of lob
+
+```{r}
+colnames(lob)
+```
+
 ```{r}
 lob <- lob |>
   rename(year = YEAR,
@@ -91,7 +98,22 @@ lob <- lob |>
          price_lb = `PRICE/LB`,
          licenses = `NUMBER OF LICENSE HOLDERS†`,
          m_traps = `NUMBER OF TRAPS - MILLIONS`,
-         temp = `WATER TEMP AT BOOTHBAY HARBOR STATION (C)`)
+         temp = `WATER TEMP AT BOOTHBAY HARBOR STATION (C)`) 
+
+lob
+```
+
+## Fix value and price_lb columns - remove $ and cast as numeric
+
+```{r}
+lob$value
+```
+
+
+```{r}
+lob <- lob |>
+  mutate(value = gsub(",", "", substring(value, 2), fix=TRUE) |> as.numeric(),
+         price_lb = substring(price_lb, 2) |> as.numeric())
 
 lob
 ```
@@ -140,6 +162,7 @@ lob |>
 ```
 
 
+
 ## Arranging a data frame
 
 ```{r}
@@ -177,7 +200,7 @@ ggplot(data = lob, aes(x=year, y=pounds)) +
 
 ```{r}
 ggplot(data = lob, aes(x=year, y=m_value)) +
-  geom_line()
+  geom_line(linetype="dashed")
 ```
 
 ## Scatter plot
