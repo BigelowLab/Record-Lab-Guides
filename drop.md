@@ -1,0 +1,100 @@
+using drop when subsetting
+================
+2023-02-23
+
+We often need to extract a subset of data out of an object. We either
+want the same kind of object but with less data, or we want the actual
+data values. This process is called ‘extraction’ or ‘subsetting’ and R
+provides tools for this. Another name for this is ‘indexing’ although
+purists will probably differ on that. Who cares about them?
+
+Array like objects ( things laid out in regular patterns like arrays,
+matrices, data.frames, rasters, …) can be index using `[`. See `?[` for
+help on base R indexing.
+
+We’ll make a data.frame as our example, but it could be a tibble (which
+is a data.frame), matrix, or array.
+
+``` r
+n = 4
+x = data.frame(A = seq_len(n), B = seq_len(n) * 5, C = seq_len(n) - 10)
+x
+```
+
+    ##   A  B  C
+    ## 1 1  5 -9
+    ## 2 2 10 -8
+    ## 3 3 15 -7
+    ## 4 4 20 -6
+
+Subsetting by indexing has us specify the `[rows, columns]` we want.
+
+So the 3rd and 4th rows.
+
+``` r
+x[3:4,]
+```
+
+    ##   A  B  C
+    ## 3 3 15 -7
+    ## 4 4 20 -6
+
+Or we could select the 3rd and 4th rows but just columns A and B
+
+``` r
+x[3:4, c("A", "B")]
+```
+
+    ##   A  B
+    ## 3 3 15
+    ## 4 4 20
+
+In each case we get a subset of the same object type. How about just
+getting column C for the 3rd and 4th rows?
+
+``` r
+x[3:4, "C"]
+```
+
+    ## [1] -7 -6
+
+Whoopsie! It’s just a vector! That’s not the same type of object as `x`.
+What gives?
+
+It’s an issue many languages have to face - what to do when a user
+selects one column… did they intended to subset and retain the same
+object type? Or did the want the actual values *in* that column to do
+some analysis with? How is a poor computer to know? Some languages opt
+to always assume users a lazy and just wanted the data in the column to
+do stuff with. Other languages assume the user doesn’t want to change
+object type. R is the former. So you have to explicitly tell R to *not*
+degenerate the data type from something complicated to something simple.
+To do that you have to use the `drop = TRUE|FALSE` argument to `[`
+function (yes, it is a funny looking function!) Here `drop` means if the
+result only has one column, then drop the dimensionality of the result
+to something simpler.
+
+Compare…
+
+``` r
+x[3:4, "C", drop = TRUE]
+```
+
+    ## [1] -7 -6
+
+… to …
+
+``` r
+x[3:4, "C", drop = FALSE]
+```
+
+    ##    C
+    ## 3 -7
+    ## 4 -6
+
+Viola! We now retain the original object type for the subset.
+
+So, when should you use the `drop` argument? Well, anytime you are
+building a function that will subset by indexing, you should at least
+consider adding `drop`. But, of course, it depends upon the context of
+what you function needs to do.
