@@ -32,4 +32,6 @@ Note that running this will reset RStudio's and R's global options (see `Tools >
 ![happy-global-settings](happy-global-settings.png)
 
 
+### Saved sessions
 
+Even though we generally do not save R session data, RStudio saves its own session data.  These are semi-temporary directories and files saved in your `~/.loca/share/rstudio` directory.  RStudio takes care of cleaning these up for you when no longer needed.   Sometimes, for whatever reason, a saved session gets orphaned when RStudio crashes.  That saved session is not automatically cleaned up, but instead becomes orphaned.  It can take up a lot of space on the disk, so after a crash check this directory for orphaned sessions that you can delete manually.
