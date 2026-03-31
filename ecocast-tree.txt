@@ -1,4 +1,4 @@
-/mnt/ecocast            <- note this is network storage
+/mnt/s1/projects/ecocast            <- note this is network storage
     ├── corecode            <- for admin only (Nick or Ben)
     │   ├── java
     │   ├── matlab
